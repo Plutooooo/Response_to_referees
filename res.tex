@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{fullpage}
+\usepackage{geometry}
+\geometry{margin=0.95in}
+\pagestyle{plain}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0.6em}
+\renewcommand{\baselinestretch}{1.02}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage{xifthen}
+% define counters for reviewers and their points
+\newcounter{reviewer}
+\setcounter{reviewer}{0}
+\newcounter{point}[reviewer]
+\setcounter{point}{0}
+
+% This refines the format of how the reviewer/point reference will appear.
+\renewcommand{\thepoint}{(\arabic{point})}
+
+% command declarations for reviewer points and our responses
+\newcommand{\reviewersection}{\stepcounter{reviewer} \bigskip \hrule
+                  \section*{Responses to report of the First Referee}}
+
+\newenvironment{point}
+   {\refstepcounter{point} \bigskip \noindent {\textbf{Comment/Question~\thepoint} } ---\ }
+   {\par }
+
+\newcommand{\shortpoint}[1]{\refstepcounter{point}  \bigskip \noindent
+	{\textbf{Reviewer~Point~\thepoint} } ---~#1\par }
+
+\newenvironment{reply}
+   {\medskip \noindent \textbf{\color{red} Response}:\  }
+   {\medskip}
+
+\newcommand{\shortreply}[2][]{\medskip \noindent \begin{sf}\textbf{Response}:\  #2
+	\ifthenelse{\equal{#1}{}}{}{ \hfill \footnotesize (#1)}%
+	\medskip \end{sf}}
+
+\begin{document}
+
+\thispagestyle{empty}
+\noindent
+Editor XXX\\
+Associate Editor\\
+Physical Review B\\
+American Physical Society
+
+
+\noindent May 15, 2019\\
+
+\noindent
+Dear Editor XXX,
+
+\vspace{0.2cm}
+
+\noindent Thank you for forwarding us the referee reports. We found both reports are insightful and have helped us greatly in improving the presentation of our manuscript.
+
+\noindent ...
+
+\noindent With these information in order, we again would like to thank you the editor and both referees for your careful reading, enlightening questions and helpful comments. And hereby resubmit our manuscript for your consideration for publication in your respected journal.
+
+\vspace{0.4cm}
+\noindent Sincerely,\\[0.15cm]
+XXX
+\newpage
+\setcounter{page}{1}
+
+
+\stepcounter{reviewer}\section*{Response to the first referee}
+
+First of all we thank the referee for his/her assessment of our work. We would like to show the originality and importance of our work in response to the referee's comment as:
+
+\begin{point}
+\begin{em}
+referee's question or comment
+\end{em}
+\end{point}
+
+
+\begin{reply}
+We believe that our work shows some new results and can be regarded as a very useful reference for further study. We will be very grateful if the first referee would reconsider the revised version. Besides, as suggested by the first referee, we also changed a lot in  details to improve the description to make it better for reading and understanding. The changing details will be listed in the end.
+\end{reply}
+
+
+\stepcounter{reviewer}  \bigskip\hrule\section*{Response to the second referee}
+
+We thank the referee for his/her detailed and insightful questions about our work, and they have indeed helped us to improve our paper. Below, we address the comments and questions of the respected referee one by one.
+
+\begin{point}
+\begin{em}
+referee's question or comment
+\end{em}
+\end{point}
+
+
+\begin{reply}
+We thank the referee for pointing that out and we would like to explain more details about...
+\end{reply}
+
+
+
+
+\bigskip\hrule\section*{Summary of changes to manuscript}
+
+In response to the first referee:
+\begin{enumerate}
+   \item We have ...
+\end{enumerate}
+
+\noindent In response to the second referee:
+\begin{enumerate}
+  \item ...
+\end{enumerate}
+
+
+
+\end{document}
+
+
